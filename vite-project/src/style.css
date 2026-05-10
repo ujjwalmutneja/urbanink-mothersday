@@ -67,25 +67,25 @@ body {
   opacity: 0;
   visibility: hidden;
   z-index: 10;
+  padding: 20px;
 }
 
-/* Scene 2: Line Art */
-.svg-container {
-  width: 400px;
-  height: 400px;
-  filter: drop-shadow(0 0 15px var(--gold-glow));
+/* ── Scene 1 ── */
+.scene1-title {
+  font-size: clamp(1.6rem, 5vw, 4rem);
+  text-transform: none;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 0 20px;
 }
 
-.mother-child-path {
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 1.2;
-  stroke-linecap: round;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
+/* ── Scene 2: Line Art ── */
+.line-art-image-container {
+  width: clamp(260px, 60vw, 500px);
+  height: clamp(260px, 60vw, 500px);
 }
 
-/* Scene 3: Hero Image */
+/* ── Scene 3: Hero Image ── */
 .hero-wrapper {
   position: absolute;
   inset: 0;
@@ -150,7 +150,55 @@ body {
   filter: drop-shadow(0 0 10px var(--gold-bright)) drop-shadow(0 0 20px #fff);
 }
 
-/* Gallery */
+/* ── Scene 5: Hero Message ── */
+.scene5-content {
+  text-align: center;
+  z-index: 10;
+  padding: 0 24px;
+}
+
+.scene5-main-text {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.6rem, 5vw, 4rem);
+  color: #ebd695;
+  line-height: 1.3;
+  margin-bottom: clamp(20px, 4vh, 40px);
+  text-shadow: 0 0 20px rgba(235,214,149,0.3);
+  font-weight: normal;
+}
+
+.scene5-script-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: clamp(20px, 4vh, 60px);
+}
+
+.scene5-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.5rem, 9vw, 6rem);
+  color: #fada5e;
+  text-shadow: 0 0 20px rgba(250,218,94,0.5);
+  margin: 0;
+}
+
+.scene5-heart {
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: #ff8787;
+  filter: drop-shadow(0 0 20px #ff8787);
+}
+
+.scene5-credit {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.75rem, 2.5vw, 1.5rem);
+  color: #ebd695;
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+/* ── Scene 6: Gallery ── */
 .gallery-container {
   position: absolute;
   top: 40%;
@@ -166,8 +214,8 @@ body {
 
 .gallery-item {
   position: absolute;
-  width: 280px;
-  height: 400px;
+  width: clamp(150px, 22vw, 280px);
+  height: clamp(220px, 32vw, 400px);
   border-radius: 12px;
   overflow: hidden;
   border: 2px solid var(--gold);
@@ -193,6 +241,29 @@ body {
   opacity: 1;
 }
 
+.gallery-bottom-text {
+  position: absolute;
+  bottom: 6%;
+  text-align: center;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.gallery-title {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: clamp(1.2rem, 4vw, 3rem);
+  margin-bottom: 4px;
+  text-shadow: 0 0 15px var(--gold-glow);
+}
+
+.gallery-script {
+  font-family: var(--font-script);
+  color: var(--gold);
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-shadow: 0 0 20px var(--gold-glow);
+}
+
 .reflection-floor {
   position: fixed;
   bottom: 0;
@@ -204,7 +275,7 @@ body {
   border-top: 1px solid rgba(212, 175, 55, 0.05);
 }
 
-/* Typography */
+/* ── Typography utilities ── */
 .gold-text {
   font-family: var(--font-serif);
   color: var(--gold);
@@ -221,31 +292,77 @@ body {
   text-shadow: 0 0 20px var(--gold-glow);
 }
 
+/* ── Scene 7: Final ── */
+.final-logo {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(4rem, 15vw, 7rem);
+  color: #fada5e;
+  text-shadow: 0 0 20px rgba(250,218,94,0.5);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.final-brand {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-size: clamp(0.6rem, 2.5vw, 1.2rem);
+  letter-spacing: clamp(4px, 1.5vw, 12px);
+  margin-bottom: clamp(10px, 2vh, 20px);
+  text-shadow: 0 0 15px rgba(212,175,55,0.6);
+}
+
+.final-ekg-container {
+  width: 100vw;
+  height: clamp(60px, 12vh, 120px);
+  position: relative;
+  margin: 10px 0;
+}
+
+.final-thankyou {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 4vw, 2rem);
+  color: #fff;
+  opacity: 0.9;
+  margin-top: clamp(12px, 2.5vh, 30px);
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* ── Restart Button ── */
 #restart-btn {
+  margin-top: clamp(20px, 3vh, 40px);
+  z-index: 100;
   background: transparent;
-  border: 1px solid #d4af37;
-  color: #d4af37;
-  padding: 15px 40px;
-  font-family: 'Cinzel';
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  padding: clamp(10px, 1.5vh, 15px) clamp(24px, 5vw, 50px);
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  letter-spacing: 4px;
   cursor: pointer;
   border-radius: 50px;
-  transition: 0.3s;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(212,175,55,0.1);
 }
 
 #restart-btn:hover {
   background: var(--gold);
   color: #000;
+  box-shadow: 0 0 30px rgba(212,175,55,0.4);
+  transform: scale(1.04);
 }
 
-.visualizer {
-  display: flex;
-  gap: 5px;
-  height: 50px;
-  margin-top: 2rem;
+.restart-icon {
+  font-size: 1.2em;
+  display: inline-block;
+  transition: transform 0.4s ease;
 }
 
-.bar {
-  width: 3px;
-  background: var(--gold);
-  border-radius: 2px;
+#restart-btn:hover .restart-icon {
+  transform: rotate(-360deg);
 }

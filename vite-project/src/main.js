@@ -136,7 +136,8 @@ class MotherDayCinema {
 
       const zIndex = 10 - absOffset;
       const scale = isActive ? 1 : 1 - absOffset * 0.15;
-      const translateX = offset * 260; // Spread distance
+      const spread = window.innerWidth < 600 ? 120 : 260;
+      const translateX = offset * spread; // Spread distance
       const rotateY = isLeft ? 35 : isRight ? -35 : 0;
       const opacity = absOffset > 2 ? 0 : isActive ? 1 : 0.6;
       
