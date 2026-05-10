@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cinematic Mother's Day Wish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Background Effects -->
+  <div class="vignette"></div>
+  <canvas id="particle-canvas"></canvas>
+  <div class="reflection-floor" id="gallery-floor"></div>
+
+  <div id="app">
+    <!-- Loader -->
+    <div id="loader" class="screen active">
+      <div style="text-align: center;">
+        <p class="gold-text" style="font-size: 0.8rem; letter-spacing: 10px;">CRAFTING THE MOMENT</p>
+        <div class="progress-bar-container">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <main id="story-container">
+      <!-- Scene 1: Intro -->
+      <section id="scene-1" class="scene">
+        <h1 class="gold-text" style="font-size: 4rem; text-transform: none;">Before the world knew us...</h1>
+      </section>
+
+      <!-- Scene 2: Line Art Drawing -->
+      <section id="scene-2" class="scene">
+        <!-- Glowing Flowing Lines Background -->
+        <div style="position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; z-index: 1;">
+          <svg viewBox="0 0 1000 500" preserveAspectRatio="none" style="width: 100vw; height: 100vh; filter: drop-shadow(0 0 12px #fada5e);">
+            <path class="glow-line" stroke-dasharray="2500" stroke-dashoffset="2500" d="M-100,350 C200,500 400,100 600,250 S900,450 1200,200" fill="none" stroke="rgba(250,218,94,0.6)" stroke-width="2.5" />
+            <path class="glow-line" stroke-dasharray="2500" stroke-dashoffset="2500" d="M-100,200 C300,50 500,450 700,300 S1000,50 1200,250" fill="none" stroke="rgba(250,218,94,0.4)" stroke-width="1.5" />
+            <path class="glow-line" stroke-dasharray="2500" stroke-dashoffset="2500" d="M-100,450 C250,150 450,550 750,200 S1000,500 1200,300" fill="none" stroke="rgba(212,175,55,0.5)" stroke-width="3" />
+            <path class="glow-line" stroke-dasharray="2500" stroke-dashoffset="2500" d="M-100,250 C150,550 350,100 550,350 S800,100 1200,350" fill="none" stroke="rgba(250,218,94,0.3)" stroke-width="1.5" />
+          </svg>
+        </div>
+
+        <div class="line-art-image-container" style="width: 500px; height: 500px; position: relative; z-index: 10;">
+          <img id="mother-child-art" src="/Line-art.png" alt="Mother Child Line Art"
+            style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 8px rgba(250, 218, 94, 0.5)); clip-path: inset(100% 0 0 0);" />
+        </div>
+      </section>
+
+      <!-- Scene 3: Image Reveal & Heartbeat -->
+      <section id="scene-3" class="scene">
+        <div class="hero-wrapper">
+          <div class="halo-glow"></div>
+          
+          <!-- Hero Image -->
+          <div class="hero-image-container" style="z-index: 10;">
+            <img id="hero-img" src="" alt="Mother" />
+          </div>
+
+          <!-- Heartbeat Overlay - line fades out in center where subjects are -->
+          <div class="heartbeat-overlay" id="heartbeat-overlay" style="
+            z-index: 30;
+            mix-blend-mode: screen;
+            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 72%, rgba(0,0,0,1) 82%, rgba(0,0,0,1) 100%);
+            mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 72%, rgba(0,0,0,1) 82%, rgba(0,0,0,1) 100%);
+          ">
+            <svg viewBox="0 0 1000 200" class="ekg-svg" preserveAspectRatio="none">
+              <path class="ekg-path" d="M0,100 L120,100 L148,68 L175,132 L202,72 L228,118 L250,100 L850,100 L872,100 L895,68 L918,132 L940,72 L962,118 L980,100 L1000,100" filter="drop-shadow(0 0 10px #fada5e)"></path>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scene 5: Hero Message -->
+      <section id="scene-5" class="scene">
+        <div style="text-align: center; z-index: 10;">
+          <h2 style="font-family: 'Cinzel', serif; font-size: 4rem; color: #ebd695; line-height: 1.2; margin-bottom: 40px; text-shadow: 0 0 20px rgba(235,214,149,0.3); font-weight: normal; text-transform: none; letter-spacing: normal;">
+            To the woman<br>who gave us everything.
+          </h2>
+          
+          <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 60px;">
+            <h3 style="font-family: 'Great Vibes', cursive; font-size: 6rem; color: #fada5e; text-shadow: 0 0 20px rgba(250,218,94,0.5); margin: 0;">
+              Happy Mother's Day
+            </h3>
+            <span style="font-size: 4rem; color: #ff8787; filter: drop-shadow(0 0 20px #ff8787); margin-top: 15px;">❤️</span>
+          </div>
+
+          <p style="font-family: 'Cinzel', serif; font-size: 1.5rem; color: #ebd695; opacity: 0.8; letter-spacing: 2px;">
+            Made with love from ujjwal
+          </p>
+        </div>
+      </section>
+
+      <!-- Scene 6: Memories Gallery -->
+      <section id="scene-6" class="scene">
+        <div class="gallery-container" id="gallery-grid"></div>
+
+        <!-- Left Arrow -->
+        <div style="position: absolute; left: 40px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border: 1px solid rgba(212,175,55,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0;" class="nav-arrow" id="nav-arrow-left">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </div>
+
+        <!-- Right Arrow -->
+        <div style="position: absolute; right: 40px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border: 1px solid rgba(212,175,55,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0;" class="nav-arrow" id="nav-arrow-right">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+
+        <div style="position: absolute; bottom: 8%; text-align: center; width: 100%;">
+          <h2 class="script-text" style="font-size: 3rem; margin-bottom: 0.5rem; font-family: 'Cinzel', serif;">Every moment...</h2>
+          <h2 class="script-text" style="font-size: 4rem;">Every love...</h2>
+          <svg style="margin: 10px auto 0; display: block; filter: drop-shadow(0 0 10px rgba(212,175,55,0.8));" width="24" height="24" viewBox="0 0 24 24" fill="#d4af37" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Scene 7: Final -->
+      <section id="scene-7" class="scene">
+        <!-- Logo Text -->
+        <div style="font-family: 'Cinzel', serif; font-size: 7rem; color: #fada5e; text-shadow: 0 0 20px rgba(250,218,94,0.5); line-height: 1; margin-bottom: 5px;">
+          US
+        </div>
+        
+        <!-- Brand Name -->
+        <div class="gold-text" style="font-size: 1.2rem; letter-spacing: 12px; margin-bottom: 20px; text-shadow: 0 0 15px rgba(212,175,55,0.6);">
+          URBANINK STUDIOS
+        </div>
+
+        <!-- Heartbeat Line -->
+        <div style="width: 100vw; height: 120px; position: relative; margin: 20px 0;">
+          <svg viewBox="0 0 1000 100" preserveAspectRatio="none" style="width: 100%; height: 100%; filter: drop-shadow(0 0 12px #fada5e);">
+            <path class="final-ekg" d="M0,50 L300,50 L330,50 L350,30 L370,70 L390,50 L420,50 L450,50 L480,20 L500,85 L520,35 L540,65 L560,50 L600,50 L650,50 L670,35 L690,65 L710,50 L1000,50" fill="none" stroke="#fada5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+
+        <!-- Thank you message -->
+        <p style="font-family: 'Inter', sans-serif; font-size: 2rem; color: #fff; opacity: 0.9; margin-top: 30px; letter-spacing: 3px;">
+          Thank you Mom <span style="color: #ff8787; filter: drop-shadow(0 0 10px #ff8787);">❤️</span>
+        </p>
+        
+        <button id="restart-btn" style="margin-top: 40px; z-index: 100;">RELIVE THE MAGIC</button>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
