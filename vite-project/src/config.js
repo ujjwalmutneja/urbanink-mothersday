@@ -5,11 +5,11 @@ export const config = {
   lineArtImage: "https://images.unsplash.com/photo-1510154221590-ff63e90a136f?q=80&w=1000&auto=format&fit=crop", 
   heroImage: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=2070&auto=format&fit=crop", 
   galleryImages: [
-    "/src/images/image1.png",
-    "/src/images/image2.png",
-    "/src/images/image3.png",
-    "/src/images/image4.png",
-    "/src/images/image5.png"
+    "/images/image1.png",
+    "/images/image2.png",
+    "/images/image3.png",
+    "/images/image4.png",
+    "/images/image5.png"
   ],
   messages: {
     intro: "BEFORE THE WORLD KNEW US...",

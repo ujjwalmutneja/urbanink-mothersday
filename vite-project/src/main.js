@@ -77,7 +77,7 @@ class MotherDayCinema {
   }
 
   populateContent() {
-    document.getElementById('hero-img').src = '/src/image-reveal.png';
+    document.getElementById('hero-img').src = '/image-reveal.png';
 
     const galleryGrid = document.getElementById('gallery-grid');
     config.galleryImages.forEach((imgSrc, i) => {
